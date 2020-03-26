@@ -1,0 +1,6 @@
+<div *ngIf="movies; else loading" class="row">
+  <app-list-item *ngFor="let movie of movies" [movie]="movie" class="col-md-4"></app-list-item>
+</div>
+<ng-template #loading>
+  Идет загрузка...
+</ng-template>

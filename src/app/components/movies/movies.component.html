@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Movies Catalog</h1>
+
+  <app-search></app-search>
+  <div class="row">
+    <div class="col-md-3">
+      <app-filters></app-filters>
+    </div>
+    <div class="col-md-9">
+      <app-list [searched]="searched"></app-list>
+    </div>
+  </div>
+</div>

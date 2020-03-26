@@ -1,0 +1,13 @@
+<div *ngIf="movie">
+  <div class="card">
+    <img class="card-img-top" [src]="'./../../../../assets/images/movie-covers/' + movie.img" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{movie.name}}</h5>
+      <p>{{movie.description | slice:0:50}}</p>
+      <p>{{movie.rate}} из 10</p>
+      <button class="btn btn-primary" role="button" [routerLink]="['/movie', movie.id]" (click)="onTop()">
+        Открыть
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div *ngIf="movie$ | async as movie; else loading">
+  <div class="card">
+    <button class="card-header" (click)="back()">
+      Назад
+    </button>
+    <img class="card-img" [src]="'./../../../../assets/images/movie-covers/' + movie.img" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{movie.name}}</h5>
+      <h6>{{movie.genres.join(', ')}}</h6>
+      <p>{{movie.rate}} из 10, Продолжительность: {{movie.length}}</p>
+      <p class="card-text">{{movie.description}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <app-list [movies]="moviesList"></app-list>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <p class="text-center">Идет загрузка...</p>
+</ng-template>
